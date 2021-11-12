@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niravadea.Projects.Orchid.Core", "Niravadea.Projects.Orchid.Core\Niravadea.Projects.Orchid.Core.csproj", "{775240E9-7C83-4092-9195-C01CC4240A61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb", "Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb\Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb.csproj", "{F65AC6BC-9473-432A-8A6B-B4CE01857091}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niravadea.Projects.Orchid.AuthenticationDatabase", "Niravadea.Projects.Orchid.AuthenticationDatabase\Niravadea.Projects.Orchid.AuthenticationDatabase.csproj", "{D7247067-B43F-405F-8399-39F3BF7E9006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{775240E9-7C83-4092-9195-C01CC4240A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775240E9-7C83-4092-9195-C01CC4240A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775240E9-7C83-4092-9195-C01CC4240A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775240E9-7C83-4092-9195-C01CC4240A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65AC6BC-9473-432A-8A6B-B4CE01857091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65AC6BC-9473-432A-8A6B-B4CE01857091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65AC6BC-9473-432A-8A6B-B4CE01857091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65AC6BC-9473-432A-8A6B-B4CE01857091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7247067-B43F-405F-8399-39F3BF7E9006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7247067-B43F-405F-8399-39F3BF7E9006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7247067-B43F-405F-8399-39F3BF7E9006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7247067-B43F-405F-8399-39F3BF7E9006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AA5F5D5-0D4E-4232-A493-CF83ED25B959}
+	EndGlobalSection
+EndGlobal

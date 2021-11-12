@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Niravadea.Projects.Orchid.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dsharpplus.slashcommands" Version="4.2.0-nightly-01025" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.37" />
+    <PackageReference Include="MediatR.Extensions.microsoft.dependencyinjection" Version="9.0.0" />
+    <PackageReference Include="microsoft.extensions.hosting" Version="5.0.0" />
+    <PackageReference Include="microsoft.extensions.http" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb\Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.AuthenticationDatabase\Niravadea.Projects.Orchid.AuthenticationDatabase.csproj" />
+  </ItemGroup>
+
+</Project>
