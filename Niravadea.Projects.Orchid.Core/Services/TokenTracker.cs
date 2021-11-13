@@ -60,5 +60,22 @@ namespace Niravadea.Projects.Orchid.Core.Services
                 _slimSemaphore.Release();
             }
         }
+
+        public async Task ClearPendingAuthenticationToken(ulong discordId)
+        {
+            try
+            {
+                await _slimSemaphore.WaitAsync();
+                _pendingAuthentications.Remove(key: discordId);
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                _slimSemaphore.Release();
+            }
+        }
     }
 }

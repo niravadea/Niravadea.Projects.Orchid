@@ -11,5 +11,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
         Task<string> AddPendingAuthentication(ulong discordId, int forumsId);
 
         Task<IdTokenPair> GetPendingAuthenticationToken(ulong discordId);
+
+        Task ClearPendingAuthenticationToken(ulong discordId);
     }
 }
