@@ -90,19 +90,18 @@ namespace Niravadea.Projects.Orchid.Core.Discord
 
             if (isAlreadyKnown)
             {
-                /*
-                await _mediator.Send(CompleteSuccessfulInteractionRequest.NewRequestFromMessage(
-                    interactionId: interactionId,
-                    message: "You've already authenticated!"
-                ));
-                */
-
                 // handle role assignments if not already done
 
                 await _mediator.Send(GrantRoleRequest.CreateNewRequest(
                     interactionId: interactionId,
                     requestedRole: Constants.AuthenticatedRole
                 ));
+
+                await _mediator.Send(CompleteSuccessfulInteractionRequest.NewRequestFromMessage(
+                    interactionId: interactionId,
+                    message: "You've already authenticated!"
+                ));
+
                 return;
             }
 
