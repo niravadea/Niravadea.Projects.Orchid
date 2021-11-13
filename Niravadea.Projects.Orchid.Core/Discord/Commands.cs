@@ -141,5 +141,24 @@ namespace Niravadea.Projects.Orchid.Core.Discord
                 userId: context.User.Id
             ));
         }
+
+        [SlashCommand("clear", "Clear any pending tokens for your Discord ID")]
+        public async Task ClearPendingToken(
+            InteractionContext context
+        )
+        {
+            ulong interactionId = await _mediator.Send(RegisterNewInteractionRequest.NewRequest(
+                context: context
+            ));
+
+            await _mediator.Send(TokenClearRequest.CreateNewRequestFromId(
+                discordId: context.User.Id
+            ));
+
+            await _mediator.Send(CompleteSuccessfulInteractionRequest.NewRequestFromMessage(
+                interactionId: interactionId,
+                message: "Cleared all pending tokens associated with your Discord ID!"
+            ));
+        }
     }
 }
