@@ -4,6 +4,7 @@ using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 using Niravadea.Projects.Orchid.Core.Exceptions;
 using Niravadea.Projects.Orchid.Core.Requests.Interactions;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,6 +13,9 @@ namespace Niravadea.Projects.Orchid.Core.Handlers.Interactions
     public class GrantRoleErrorHandler
         : IRequestExceptionAction<GrantRoleRequest, RoleNotFoundException>
         , IRequestExceptionAction<GrantRoleRequest, UnauthorizedException>
+        , IRequestExceptionAction<GrantRoleRequest, NotFoundException>
+        , IRequestExceptionAction<GrantRoleRequest, BadRequestException>
+        , IRequestExceptionAction<GrantRoleRequest, ServerErrorException>
     {
         private readonly IMediator _mediator;
         private readonly ILogger<GrantRoleErrorHandler> _logger;
@@ -45,5 +49,23 @@ namespace Niravadea.Projects.Orchid.Core.Handlers.Interactions
             ));
         }
 
+        // internal server side issue
+        private async Task genericHandler(GrantRoleRequest request, Exception exception)
+        {
+            _logger.LogError(exception, $"An error occurred while trying to grant an authenticated role on interaction '{request.InteractionId}'.");
+            await _mediator.Send(CompleteUnsuccessfulInteractionRequest.NewRequestFromMessage(
+                interactionId: request.InteractionId,
+                message: "Unable to complete the authentication request."
+            ));
+        }
+
+        public Task Execute(GrantRoleRequest request, NotFoundException exception, CancellationToken cancellationToken)
+            => genericHandler(request, exception);
+
+        public Task Execute(GrantRoleRequest request, BadRequestException exception, CancellationToken cancellationToken)
+            => genericHandler(request, exception);
+
+        public Task Execute(GrantRoleRequest request, ServerErrorException exception, CancellationToken cancellationToken)
+            => genericHandler(request, exception);
     }
 }
