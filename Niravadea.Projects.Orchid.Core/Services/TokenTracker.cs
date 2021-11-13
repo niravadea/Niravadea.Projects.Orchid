@@ -11,7 +11,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
     public class TokenTracker : ITokenTracker
     {
         private readonly IDictionary<ulong, IdTokenPair> _pendingAuthentications = new Dictionary<ulong, IdTokenPair>();
-        private readonly SemaphoreSlim _slimSemaphore = new SemaphoreSlim(1, 1);
+        private readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
         private readonly IMediator _mediator;
 
         public TokenTracker(IMediator mediator) => _mediator = mediator;
@@ -20,7 +20,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
         {
             try
             {
-                await _slimSemaphore.WaitAsync();
+                await _semaphoreSlim.WaitAsync();
 
                 if (_pendingAuthentications.ContainsKey(discordId))
                 {
@@ -40,7 +40,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
             }
             finally
             {
-                _slimSemaphore.Release();
+                _semaphoreSlim.Release();
             }
         }
 
@@ -48,7 +48,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
         {
             try
             {
-                await _slimSemaphore.WaitAsync();
+                await _semaphoreSlim.WaitAsync();
                 return _pendingAuthentications.ContainsKey(discordId) ? _pendingAuthentications[discordId] : null;
             }
             catch
@@ -57,7 +57,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
             }
             finally
             {
-                _slimSemaphore.Release();
+                _semaphoreSlim.Release();
             }
         }
 
@@ -65,7 +65,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
         {
             try
             {
-                await _slimSemaphore.WaitAsync();
+                await _semaphoreSlim.WaitAsync();
                 _pendingAuthentications.Remove(key: discordId);
             }
             catch
@@ -74,7 +74,7 @@ namespace Niravadea.Projects.Orchid.Core.Services
             }
             finally
             {
-                _slimSemaphore.Release();
+                _semaphoreSlim.Release();
             }
         }
     }
