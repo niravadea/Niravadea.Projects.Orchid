@@ -34,24 +34,7 @@ namespace Niravadea.Projects.Orchid.Core
 
         private static void ApplicationConfiguration(IConfigurationBuilder configuration)
         {
-            // this is for local file access; will want to switch this out for
-            // whatever secrets storage or app configuration is appropriate for
-            // the end environment, e.g. Azure, environment variables, etc.
-            string desktopDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            string botSecretsPath = Path.Combine(desktopDirectory, "botInterfaceSecrets.json");
-            configuration.AddJsonFile(
-                path: botSecretsPath,
-                optional: false
-            );
-
-            string forumClientSecretsPath = Path.Combine(desktopDirectory, "saInterfaceSecrets.json");
-            configuration.AddJsonFile(
-                path: forumClientSecretsPath,
-                optional: false
-            );
-
-            configuration.ConfigureAuthenticationDatabaseLiteDbImplementation();
         }
 
         private static void ServiceConfiguration(HostBuilderContext context, IServiceCollection services)

@@ -39,13 +39,5 @@ namespace Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb.DependencyInje
                             Password = configuration.Password
                         });
                     });
-
-        public static IConfigurationBuilder ConfigureAuthenticationDatabaseLiteDbImplementation(this IConfigurationBuilder builder)
-        {
-            string desktopDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string liteDbConfigPath = Path.Combine(desktopDirectory, "dbConfiguration.json");
-            builder.AddJsonFile(path: liteDbConfigPath, optional: false);
-            return builder;
-        }
     }
 }
