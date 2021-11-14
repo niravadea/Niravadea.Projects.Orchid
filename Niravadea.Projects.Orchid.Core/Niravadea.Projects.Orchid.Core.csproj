@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="C:\devconfig\Niravadea.Projects.Orchid\AppSettings.json" Link="AppSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="dsharpplus.slashcommands" Version="4.2.0-nightly-01025" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.37" />
     <PackageReference Include="MediatR.Extensions.microsoft.dependencyinjection" Version="9.0.0" />
