@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="htmlagilitypack" Version="1.11.38" />
+    <PackageReference Include="mediatr.extensions.microsoft.dependencyinjection" Version="9.0.0" />
+    <PackageReference Include="microsoft.extensions.hosting.abstractions" Version="5.0.0" />
+    <PackageReference Include="microsoft.extensions.http" Version="5.0.0" />
+    <PackageReference Include="microsoft.extensions.logging.abstractions" Version="5.0.0" />
+    <PackageReference Include="microsoft.extensions.options.configurationextensions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.Shared\Niravadea.Projects.Orchid.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

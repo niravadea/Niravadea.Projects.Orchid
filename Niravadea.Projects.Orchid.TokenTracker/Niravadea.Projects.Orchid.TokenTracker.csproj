@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="mediatr.extensions.microsoft.dependencyinjection" Version="9.0.0" />
+    <PackageReference Include="microsoft.extensions.hosting.abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.AuthenticationDatabase\Niravadea.Projects.Orchid.AuthenticationDatabase.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.Client.Internal.Forum\Niravadea.Projects.Orchid.Client.Internal.Forum.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.Shared\Niravadea.Projects.Orchid.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

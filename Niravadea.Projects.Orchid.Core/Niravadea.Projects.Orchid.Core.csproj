@@ -13,16 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="dsharpplus.slashcommands" Version="4.2.0-nightly-01025" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.37" />
     <PackageReference Include="MediatR.Extensions.microsoft.dependencyinjection" Version="9.0.0" />
     <PackageReference Include="microsoft.extensions.hosting" Version="5.0.0" />
-    <PackageReference Include="microsoft.extensions.http" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb\Niravadea.Projects.Orchid.AuthenticationDatabase.LiteDb.csproj" />
     <ProjectReference Include="..\Niravadea.Projects.Orchid.AuthenticationDatabase\Niravadea.Projects.Orchid.AuthenticationDatabase.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.Client.External.Discord\Niravadea.Projects.Orchid.Client.External.Discord.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.Client.Internal.Forum\Niravadea.Projects.Orchid.Client.Internal.Forum.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.TokenTracker\Niravadea.Projects.Orchid.TokenTracker.csproj" />
   </ItemGroup>
 
 </Project>

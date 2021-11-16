@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dsharpplus.slashcommands" Version="4.2.0-nightly-01044" />
+    <PackageReference Include="mediatr" Version="9.0.0" />
+    <PackageReference Include="microsoft.extensions.hosting.abstractions" Version="5.0.0" />
+    <PackageReference Include="microsoft.extensions.options.configurationextensions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.AuthenticationDatabase\Niravadea.Projects.Orchid.AuthenticationDatabase.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.Client.Internal.Forum\Niravadea.Projects.Orchid.Client.Internal.Forum.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.Shared\Niravadea.Projects.Orchid.Shared.csproj" />
+    <ProjectReference Include="..\Niravadea.Projects.Orchid.TokenTracker\Niravadea.Projects.Orchid.TokenTracker.csproj" />
+  </ItemGroup>
+
+</Project>
